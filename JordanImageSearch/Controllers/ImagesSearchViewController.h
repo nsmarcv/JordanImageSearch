@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ImagesSearchViewController.h
 //  JordanImageSearch
 //
 //  Created by Jordan Lepretre on 24/03/2018.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ImagesSearchViewController : UICollectionViewController
 
 @end
-
