@@ -23,7 +23,6 @@
 
 @property (strong, nonatomic) UIButton *animateButton;
 
-
 @end
 
 @implementation ImagesSearchViewController
@@ -65,7 +64,7 @@
         return headerView;
     }
     
-    return [[UICollectionReusableView alloc] init];
+    return nil;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -118,7 +117,6 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    
     NSDictionary *selectedImage = [_imagesList objectAtIndex:indexPath.row];
     
     //If image already selected, deselect it
@@ -168,7 +166,7 @@
             }]];
             [self presentViewController:alertController animated:YES completion:nil];
         } else{
-            //            NSLog(@"%@", json);
+//            NSLog(@"%@", json);
             
             if(!_imagesList){
                 _imagesList = [[NSArray alloc] init];
