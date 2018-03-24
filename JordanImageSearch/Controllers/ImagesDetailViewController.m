@@ -47,8 +47,6 @@
         
         _imagesScrollView.contentSize = CGSizeMake(screenWidth * [_imagesList count], screenWidth);
         
-        
-        
     }
 }
 

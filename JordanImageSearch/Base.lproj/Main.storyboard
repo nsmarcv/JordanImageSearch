@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Image search-->
+        <!--Recherche d'images-->
         <scene sceneID="6db-0t-JiY">
             <objects>
                 <collectionViewController id="qw9-Vy-xdo" customClass="ImagesSearchViewController" sceneMemberID="viewController">
@@ -25,33 +25,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Dfs-bU-eTF">
-                            <size key="itemSize" width="100" height="100"/>
+                            <size key="itemSize" width="120" height="120"/>
                             <size key="headerReferenceSize" width="50" height="50"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="15" minY="15" maxX="15" maxY="15"/>
+                            <inset key="sectionInset" minX="15" minY="15" maxX="15" maxY="60"/>
                         </collectionViewFlowLayout>
-                        <label key="backgroundView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Veuillez saisir une recherche !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Sga-Lb-h0p">
+                        <label key="backgroundView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quelles images voulez-vous afficher ?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Sga-Lb-h0p">
                             <rect key="frame" x="0.0" y="-64" width="375" height="667"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="18"/>
+                            <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="Inf-D3-U2C" customClass="ImageCollectionViewCell">
-                                <rect key="frame" x="15" y="65" width="100" height="100"/>
+                                <rect key="frame" x="15" y="65" width="120" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4dt-o4-pJC">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kwk-bH-KGh">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                             <color key="backgroundColor" red="0.40784313725490196" green="0.84705882352941175" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </imageView>
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="p1y-aW-CXK">
+                                            <rect key="frame" x="42" y="42" width="37" height="37"/>
+                                            <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                 </view>
                                 <constraints>
@@ -60,11 +64,14 @@
                                     <constraint firstAttribute="trailing" secondItem="4dt-o4-pJC" secondAttribute="trailing" id="GvH-nm-oCs"/>
                                     <constraint firstItem="4dt-o4-pJC" firstAttribute="leading" secondItem="Inf-D3-U2C" secondAttribute="leading" id="HQ9-7q-8IQ"/>
                                     <constraint firstItem="kwk-bH-KGh" firstAttribute="top" secondItem="Inf-D3-U2C" secondAttribute="top" id="P02-z7-EB3"/>
+                                    <constraint firstItem="p1y-aW-CXK" firstAttribute="centerY" secondItem="Inf-D3-U2C" secondAttribute="centerY" id="V2n-eR-lbN"/>
                                     <constraint firstAttribute="bottom" secondItem="kwk-bH-KGh" secondAttribute="bottom" id="Wm2-Fw-dKK"/>
+                                    <constraint firstItem="p1y-aW-CXK" firstAttribute="centerX" secondItem="Inf-D3-U2C" secondAttribute="centerX" id="cnt-Pr-Jwc"/>
                                     <constraint firstItem="kwk-bH-KGh" firstAttribute="leading" secondItem="Inf-D3-U2C" secondAttribute="leading" id="cqM-ZL-Gci"/>
                                     <constraint firstAttribute="trailing" secondItem="kwk-bH-KGh" secondAttribute="trailing" id="oHG-ig-Da2"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="imageLoadingIndicator" destination="p1y-aW-CXK" id="4r3-T4-d6u"/>
                                     <outlet property="imgView" destination="4dt-o4-pJC" id="sjV-Cj-8Tx"/>
                                     <outlet property="selectedImageView" destination="kwk-bH-KGh" id="QMi-P4-fpE"/>
                                 </connections>
@@ -74,7 +81,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <searchBar contentMode="redraw" showsSearchResultsButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CCX-Rw-CjN">
+                                <searchBar contentMode="redraw" placeholder="Recherche..." showsSearchResultsButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CCX-Rw-CjN">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <scopeButtonTitles>
@@ -101,7 +108,7 @@
                             <outlet property="delegate" destination="qw9-Vy-xdo" id="suA-Jm-ho9"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Image search" id="lVg-Vp-p5w"/>
+                    <navigationItem key="navigationItem" title="Recherche d'images" id="lVg-Vp-p5w"/>
                     <connections>
                         <outlet property="backgroundLabel" destination="Sga-Lb-h0p" id="HIO-ZD-8Lv"/>
                         <segue destination="kkV-F6-uyC" kind="show" identifier="showImages" id="CCK-WQ-4ve"/>

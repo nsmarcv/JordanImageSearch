@@ -137,10 +137,10 @@
 		5DEA23832066950C00F0FC13 /* JordanImageSearch */ = {
 			isa = PBXGroup;
 			children = (
-				5D82DF492066B5E900C7408F /* Utilities */,
 				5DEA23B020669CDB00F0FC13 /* Views */,
 				5DEA23AC2066985E00F0FC13 /* Controllers */,
 				5DEA23A82066962F00F0FC13 /* Managers */,
+				5D82DF492066B5E900C7408F /* Utilities */,
 				5DEA23842066950C00F0FC13 /* AppDelegate.h */,
 				5DEA23852066950C00F0FC13 /* AppDelegate.m */,
 				5DEA238A2066950C00F0FC13 /* Main.storyboard */,

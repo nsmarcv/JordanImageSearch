@@ -89,25 +89,26 @@
     
     NSDictionary *imgDict = [_imagesList objectAtIndex:indexPath.row];
     
+    //Show green filter if image is selected
     if([_selectedImagesList containsObject:imgDict]){
         [cell.selectedImageView setHidden:NO];
     } else{
         [cell.selectedImageView setHidden:YES];
     }
     
-    NSURL *imgUrl = [NSURL URLWithString:[imgDict objectForKey:@"largeImageURL"]];
     
+    cell.imgView.image = nil;
+    [cell.imageLoadingIndicator setHidden:NO];
+    
+    //Load image
+    NSURL *imgUrl = [NSURL URLWithString:[imgDict objectForKey:@"largeImageURL"]];
     if(imgUrl){
-        //Load image
         [[SDWebImageManager sharedManager] loadImageWithURL:imgUrl options:0 progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
 
             //If success
             if(image){
                 cell.imgView.image = image;
-            }
-            //If failed
-            else{
-                cell.imgView.image = nil;
+                [cell.imageLoadingIndicator setHidden:YES];
             }
         }];
     }
@@ -142,11 +143,15 @@
 
 #pragma mark SearchBar
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    //Reset selected pictures + hide animate button
+    [_selectedImagesList removeAllObjects];
+    [_animateButton setHidden:YES];
+    
     if(searchBar.text.length > 0){
         [self loadImagesWithSearch:searchBar.text];
     } else{
         _imagesList = nil;
-        _selectedImagesList = nil;
+        _backgroundLabel.text = @"Quelles images voulez-vous afficher ?";
         [self.collectionView reloadData];
     }
 }
@@ -170,6 +175,11 @@
             }
             
             _imagesList = [json objectForKey:@"hits"];
+            
+            if([_imagesList count] < 1){
+                _backgroundLabel.text = [NSString stringWithFormat:@"Aucune image trouvée pour la recherche : \n%@", searchParam];
+            }
+            
             [self.collectionView reloadData];
         }
     }];

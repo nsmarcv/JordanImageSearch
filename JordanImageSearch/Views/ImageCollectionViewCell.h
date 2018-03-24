@@ -12,5 +12,7 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *imgView;
 @property (strong, nonatomic) IBOutlet UIImageView *selectedImageView;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *imageLoadingIndicator;
+
 
 @end
