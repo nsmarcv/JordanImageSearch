@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3FA40A199F9450ADD8C00FAA /* libPods-JordanImageSearchTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA881BAD6C65195EC8AB4789 /* libPods-JordanImageSearchTests.a */; };
 		5DEA23862066950C00F0FC13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEA23852066950C00F0FC13 /* AppDelegate.m */; };
 		5DEA23892066950C00F0FC13 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEA23882066950C00F0FC13 /* ViewController.m */; };
 		5DEA238C2066950C00F0FC13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DEA238A2066950C00F0FC13 /* Main.storyboard */; };
@@ -14,6 +15,7 @@
 		5DEA23912066950C00F0FC13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DEA238F2066950C00F0FC13 /* LaunchScreen.storyboard */; };
 		5DEA23942066950C00F0FC13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEA23932066950C00F0FC13 /* main.m */; };
 		5DEA239E2066950D00F0FC13 /* JordanImageSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEA239D2066950D00F0FC13 /* JordanImageSearchTests.m */; };
+		B5FD6A718CEDA664E4E8669C /* libPods-JordanImageSearch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E70D606D1FCE1DB9C1A4B0 /* libPods-JordanImageSearch.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		414C4F7D1C587295AE6DC23F /* Pods-JordanImageSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JordanImageSearch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JordanImageSearch/Pods-JordanImageSearch.debug.xcconfig"; sourceTree = "<group>"; };
 		5DEA23812066950C00F0FC13 /* JordanImageSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JordanImageSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DEA23842066950C00F0FC13 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5DEA23852066950C00F0FC13 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -40,6 +43,11 @@
 		5DEA23992066950D00F0FC13 /* JordanImageSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JordanImageSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DEA239D2066950D00F0FC13 /* JordanImageSearchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JordanImageSearchTests.m; sourceTree = "<group>"; };
 		5DEA239F2066950D00F0FC13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64E70D606D1FCE1DB9C1A4B0 /* libPods-JordanImageSearch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JordanImageSearch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B87DEEDF07093AB01C213D4F /* Pods-JordanImageSearchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JordanImageSearchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JordanImageSearchTests/Pods-JordanImageSearchTests.release.xcconfig"; sourceTree = "<group>"; };
+		C12AF4FB30EC23ED9A794728 /* Pods-JordanImageSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JordanImageSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-JordanImageSearch/Pods-JordanImageSearch.release.xcconfig"; sourceTree = "<group>"; };
+		DDFAD543FCDA60766C8B532A /* Pods-JordanImageSearchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JordanImageSearchTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JordanImageSearchTests/Pods-JordanImageSearchTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EA881BAD6C65195EC8AB4789 /* libPods-JordanImageSearchTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JordanImageSearchTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5FD6A718CEDA664E4E8669C /* libPods-JordanImageSearch.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,18 +63,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FA40A199F9450ADD8C00FAA /* libPods-JordanImageSearchTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C6637DC2276A9AB270D6A18 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				414C4F7D1C587295AE6DC23F /* Pods-JordanImageSearch.debug.xcconfig */,
+				C12AF4FB30EC23ED9A794728 /* Pods-JordanImageSearch.release.xcconfig */,
+				DDFAD543FCDA60766C8B532A /* Pods-JordanImageSearchTests.debug.xcconfig */,
+				B87DEEDF07093AB01C213D4F /* Pods-JordanImageSearchTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		1126860E610C9782E61842E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64E70D606D1FCE1DB9C1A4B0 /* libPods-JordanImageSearch.a */,
+				EA881BAD6C65195EC8AB4789 /* libPods-JordanImageSearchTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5DEA23782066950C00F0FC13 = {
 			isa = PBXGroup;
 			children = (
 				5DEA23832066950C00F0FC13 /* JordanImageSearch */,
 				5DEA239C2066950D00F0FC13 /* JordanImageSearchTests */,
 				5DEA23822066950C00F0FC13 /* Products */,
+				0C6637DC2276A9AB270D6A18 /* Pods */,
+				1126860E610C9782E61842E6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,9 +142,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5DEA23A22066950D00F0FC13 /* Build configuration list for PBXNativeTarget "JordanImageSearch" */;
 			buildPhases = (
+				4BDDC5DC5D58676E7EC0388C /* [CP] Check Pods Manifest.lock */,
 				5DEA237D2066950C00F0FC13 /* Sources */,
 				5DEA237E2066950C00F0FC13 /* Frameworks */,
 				5DEA237F2066950C00F0FC13 /* Resources */,
+				DF5F40BFE65186E710A8F311 /* [CP] Embed Pods Frameworks */,
+				3693858AABC69C0C4C4C0C4F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -127,9 +162,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5DEA23A52066950D00F0FC13 /* Build configuration list for PBXNativeTarget "JordanImageSearchTests" */;
 			buildPhases = (
+				F88FBCDF0488E995499A8965 /* [CP] Check Pods Manifest.lock */,
 				5DEA23952066950D00F0FC13 /* Sources */,
 				5DEA23962066950D00F0FC13 /* Frameworks */,
 				5DEA23972066950D00F0FC13 /* Resources */,
+				06D218D2F20D5DAA8E06B65D /* [CP] Embed Pods Frameworks */,
+				42028C2E26415CB0176864CC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,6 +237,105 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06D218D2F20D5DAA8E06B65D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JordanImageSearchTests/Pods-JordanImageSearchTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3693858AABC69C0C4C4C0C4F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JordanImageSearch/Pods-JordanImageSearch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		42028C2E26415CB0176864CC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JordanImageSearchTests/Pods-JordanImageSearchTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BDDC5DC5D58676E7EC0388C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JordanImageSearch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF5F40BFE65186E710A8F311 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JordanImageSearch/Pods-JordanImageSearch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F88FBCDF0488E995499A8965 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JordanImageSearchTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5DEA237D2066950C00F0FC13 /* Sources */ = {
@@ -355,6 +492,7 @@
 		};
 		5DEA23A32066950D00F0FC13 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 414C4F7D1C587295AE6DC23F /* Pods-JordanImageSearch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -369,6 +507,7 @@
 		};
 		5DEA23A42066950D00F0FC13 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C12AF4FB30EC23ED9A794728 /* Pods-JordanImageSearch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -383,6 +522,7 @@
 		};
 		5DEA23A62066950D00F0FC13 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDFAD543FCDA60766C8B532A /* Pods-JordanImageSearchTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -398,6 +538,7 @@
 		};
 		5DEA23A72066950D00F0FC13 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B87DEEDF07093AB01C213D4F /* Pods-JordanImageSearchTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
