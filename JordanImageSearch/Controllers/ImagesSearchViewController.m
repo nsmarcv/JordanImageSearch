@@ -11,12 +11,16 @@
 #import "ImageCollectionViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "SearchCollectionReusableView.h"
+#import "UIColor+Utilities.h"
 
 @interface ImagesSearchViewController ()
 
 @property (strong, nonatomic) NSArray* imagesList;
+@property (strong, nonatomic) NSMutableArray* selectedImagesList;
 
 @property (strong, nonatomic) IBOutlet UILabel *backgroundLabel;
+
+@property (strong, nonatomic) UIButton *animateButton;
 
 
 @end
@@ -26,6 +30,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _selectedImagesList = [[NSMutableArray alloc] init];
+    
+    //Create animateButton
+    _animateButton = [[UIButton alloc] initWithFrame:CGRectMake(
+                                                                0,
+                                                                self.view.frame.size.height-50,
+                                                                self.view.frame.size.width,
+                                                                50)];
+    
+    [_animateButton setTitle:@"Animer les images" forState:UIControlStateNormal];
+    _animateButton.backgroundColor = [UIColor colorFromHexString:@"#68D89B"];
+    [self.view addSubview:_animateButton];
+    
+    [_animateButton setHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,8 +85,17 @@
     ImageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ImageCell" forIndexPath:indexPath];
     
     NSDictionary *imgDict = [_imagesList objectAtIndex:indexPath.row];
-    NSURL *imgUrl = [NSURL URLWithString:[imgDict objectForKey:@"largeImageURL"]];
     
+    int imageId = [[[_imagesList objectAtIndex:indexPath.row] objectForKey:@"id"] intValue];
+    NSNumber *selectedImageId = [NSNumber numberWithInt:imageId];
+    
+    if([_selectedImagesList containsObject:selectedImageId]){
+        [cell.selectedImageView setHidden:NO];
+    } else{
+        [cell.selectedImageView setHidden:YES];
+    }
+    
+    NSURL *imgUrl = [NSURL URLWithString:[imgDict objectForKey:@"largeImageURL"]];
     
     if(imgUrl){
         //Load image
@@ -88,12 +115,38 @@
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    int imageId = [[[_imagesList objectAtIndex:indexPath.row] objectForKey:@"id"] intValue];
+    NSNumber *selectedImageId = [NSNumber numberWithInt:imageId];
+    
+    //If image already selected, deselect it
+    if([_selectedImagesList containsObject:selectedImageId]){
+        [_selectedImagesList removeObject:selectedImageId];
+    } else{
+        [_selectedImagesList addObject:selectedImageId];
+    }
+    
+    //If 2 items selected or more, show button
+    if([_selectedImagesList count] >= 2){
+        [_animateButton setHidden:NO];
+        [self.view bringSubviewToFront:_animateButton];
+    }
+    else{
+        [_animateButton setHidden:YES];
+        [self.view bringSubviewToFront:_animateButton];
+    }
+    
+    [self.collectionView reloadData];
+}
+
 #pragma mark SearchBar
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     if(searchBar.text.length > 0){
         [self loadImagesWithSearch:searchBar.text];
     } else{
         _imagesList = nil;
+        _selectedImagesList = nil;
         [self.collectionView reloadData];
     }
 }
@@ -121,6 +174,5 @@
         }
     }];
 }
-
 
 @end

@@ -11,5 +11,6 @@
 @interface ImageCollectionViewCell : UICollectionViewCell
 
 @property (strong, nonatomic) IBOutlet UIImageView *imgView;
+@property (strong, nonatomic) IBOutlet UIImageView *selectedImageView;
 
 @end

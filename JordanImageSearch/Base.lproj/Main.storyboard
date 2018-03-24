@@ -46,6 +46,10 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4dt-o4-pJC">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         </imageView>
+                                        <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kwk-bH-KGh">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <color key="backgroundColor" red="0.40784313725490196" green="0.84705882352941175" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
                                     </subviews>
                                 </view>
                                 <constraints>
@@ -53,9 +57,14 @@
                                     <constraint firstItem="4dt-o4-pJC" firstAttribute="top" secondItem="Inf-D3-U2C" secondAttribute="top" id="BYR-Zi-czh"/>
                                     <constraint firstAttribute="trailing" secondItem="4dt-o4-pJC" secondAttribute="trailing" id="GvH-nm-oCs"/>
                                     <constraint firstItem="4dt-o4-pJC" firstAttribute="leading" secondItem="Inf-D3-U2C" secondAttribute="leading" id="HQ9-7q-8IQ"/>
+                                    <constraint firstItem="kwk-bH-KGh" firstAttribute="top" secondItem="Inf-D3-U2C" secondAttribute="top" id="P02-z7-EB3"/>
+                                    <constraint firstAttribute="bottom" secondItem="kwk-bH-KGh" secondAttribute="bottom" id="Wm2-Fw-dKK"/>
+                                    <constraint firstItem="kwk-bH-KGh" firstAttribute="leading" secondItem="Inf-D3-U2C" secondAttribute="leading" id="cqM-ZL-Gci"/>
+                                    <constraint firstAttribute="trailing" secondItem="kwk-bH-KGh" secondAttribute="trailing" id="oHG-ig-Da2"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="imgView" destination="4dt-o4-pJC" id="sjV-Cj-8Tx"/>
+                                    <outlet property="selectedImageView" destination="kwk-bH-KGh" id="QMi-P4-fpE"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
