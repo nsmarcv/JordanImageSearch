@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ImagesSearchViewController : UICollectionViewController
+@interface ImagesSearchViewController : UICollectionViewController <UISearchBarDelegate>
 
 @end
