@@ -26,7 +26,7 @@ const NSString *apiUrl = @"https://pixabay.com/api/?key=5511001-7691b591d9508e60
 
 #pragma mark - GET
 //GET IMAGES
-- (void) getImagesWithSearch:(NSString *)searchParam andCompletionBlock:(void(^)(NSError *error, NSArray *json))completion{
+- (void) getImagesWithSearch:(NSString *)searchParam andCompletionBlock:(void(^)(NSError *error, NSDictionary *json))completion{
     
     //Replace empty space with '+'
     searchParam = [searchParam stringByReplacingOccurrencesOfString:@" " withString:@"+"];

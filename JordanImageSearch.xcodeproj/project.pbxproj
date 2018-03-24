@@ -16,6 +16,7 @@
 		5DEA239E2066950D00F0FC13 /* JordanImageSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEA239D2066950D00F0FC13 /* JordanImageSearchTests.m */; };
 		5DEA23AB2066964E00F0FC13 /* ApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEA23AA2066964E00F0FC13 /* ApiManager.m */; };
 		5DEA23AF206698B100F0FC13 /* ImagesSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEA23AE206698B100F0FC13 /* ImagesSearchViewController.m */; };
+		5DEA23B320669D0D00F0FC13 /* ImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEA23B220669D0D00F0FC13 /* ImageCollectionViewCell.m */; };
 		B5FD6A718CEDA664E4E8669C /* libPods-JordanImageSearch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E70D606D1FCE1DB9C1A4B0 /* libPods-JordanImageSearch.a */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,8 @@
 		5DEA23AA2066964E00F0FC13 /* ApiManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApiManager.m; sourceTree = "<group>"; };
 		5DEA23AD206698B100F0FC13 /* ImagesSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImagesSearchViewController.h; sourceTree = "<group>"; };
 		5DEA23AE206698B100F0FC13 /* ImagesSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagesSearchViewController.m; sourceTree = "<group>"; };
+		5DEA23B120669D0D00F0FC13 /* ImageCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCollectionViewCell.h; sourceTree = "<group>"; };
+		5DEA23B220669D0D00F0FC13 /* ImageCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionViewCell.m; sourceTree = "<group>"; };
 		64E70D606D1FCE1DB9C1A4B0 /* libPods-JordanImageSearch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JordanImageSearch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B87DEEDF07093AB01C213D4F /* Pods-JordanImageSearchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JordanImageSearchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JordanImageSearchTests/Pods-JordanImageSearchTests.release.xcconfig"; sourceTree = "<group>"; };
 		C12AF4FB30EC23ED9A794728 /* Pods-JordanImageSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JordanImageSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-JordanImageSearch/Pods-JordanImageSearch.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,8 +119,9 @@
 		5DEA23832066950C00F0FC13 /* JordanImageSearch */ = {
 			isa = PBXGroup;
 			children = (
-				5DEA23A82066962F00F0FC13 /* Managers */,
+				5DEA23B020669CDB00F0FC13 /* Views */,
 				5DEA23AC2066985E00F0FC13 /* Controllers */,
+				5DEA23A82066962F00F0FC13 /* Managers */,
 				5DEA23842066950C00F0FC13 /* AppDelegate.h */,
 				5DEA23852066950C00F0FC13 /* AppDelegate.m */,
 				5DEA238A2066950C00F0FC13 /* Main.storyboard */,
@@ -154,6 +158,15 @@
 				5DEA23AE206698B100F0FC13 /* ImagesSearchViewController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5DEA23B020669CDB00F0FC13 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5DEA23B120669D0D00F0FC13 /* ImageCollectionViewCell.h */,
+				5DEA23B220669D0D00F0FC13 /* ImageCollectionViewCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,6 +378,7 @@
 			files = (
 				5DEA23AB2066964E00F0FC13 /* ApiManager.m in Sources */,
 				5DEA23942066950C00F0FC13 /* main.m in Sources */,
+				5DEA23B320669D0D00F0FC13 /* ImageCollectionViewCell.m in Sources */,
 				5DEA23AF206698B100F0FC13 /* ImagesSearchViewController.m in Sources */,
 				5DEA23862066950C00F0FC13 /* AppDelegate.m in Sources */,
 			);
