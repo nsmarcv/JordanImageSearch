@@ -14,6 +14,9 @@
         <array key="Baskerville.ttc">
             <string>Baskerville</string>
         </array>
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Recherche d'images-->
@@ -126,7 +129,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNm-56-Ee4">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HIRE ME  😬" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gen-nT-eJy">
+                                <rect key="frame" x="108" y="210" width="158.5" height="83.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNm-56-Ee4">
                                 <rect key="frame" x="0.0" y="64" width="375" height="375"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cNm-56-Ee4" secondAttribute="height" multiplier="1:1" id="k1r-T0-bMd"/>
@@ -135,23 +144,54 @@
                                     <outlet property="delegate" destination="kkV-F6-uyC" id="yB9-Gy-cvZ"/>
                                 </connections>
                             </scrollView>
+                            <view alpha="0.34999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bU6-89-KuK">
+                                <rect key="frame" x="0.0" y="402" width="375" height="37"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="lc8-GC-drt">
-                                <rect key="frame" x="168" y="402" width="39" height="37"/>
+                                <rect key="frame" x="0.0" y="402" width="375" height="37"/>
                             </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fed-bU-Zv4">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.46274509800000002" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="AKV-x2-M9W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="DO NOT PRESS">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="fallButton:" destination="kkV-F6-uyC" eventType="touchUpInside" id="PSC-5e-m2Q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Gen-nT-eJy" firstAttribute="centerY" secondItem="cNm-56-Ee4" secondAttribute="centerY" id="0cD-LR-ptJ"/>
+                            <constraint firstItem="lc8-GC-drt" firstAttribute="trailing" secondItem="bU6-89-KuK" secondAttribute="trailing" id="4Sz-Ml-NEx"/>
+                            <constraint firstItem="lc8-GC-drt" firstAttribute="bottom" secondItem="bU6-89-KuK" secondAttribute="bottom" id="BAF-wi-q9C"/>
                             <constraint firstItem="wgd-Wk-4PV" firstAttribute="trailing" secondItem="cNm-56-Ee4" secondAttribute="trailing" id="Fuf-PW-cEj"/>
+                            <constraint firstItem="lc8-GC-drt" firstAttribute="leading" secondItem="cNm-56-Ee4" secondAttribute="leading" id="LJ2-im-2Fy"/>
                             <constraint firstItem="cNm-56-Ee4" firstAttribute="top" secondItem="wgd-Wk-4PV" secondAttribute="top" id="UlE-P9-5p2"/>
+                            <constraint firstAttribute="trailing" secondItem="Fed-bU-Zv4" secondAttribute="trailing" id="YIC-Qr-Oxh"/>
+                            <constraint firstItem="Fed-bU-Zv4" firstAttribute="leading" secondItem="1Gm-vV-fnG" secondAttribute="leading" id="abE-02-tXm"/>
+                            <constraint firstAttribute="bottom" secondItem="Fed-bU-Zv4" secondAttribute="bottom" id="cVT-kg-ztt"/>
+                            <constraint firstItem="lc8-GC-drt" firstAttribute="leading" secondItem="bU6-89-KuK" secondAttribute="leading" id="fB6-KT-fYE"/>
+                            <constraint firstItem="lc8-GC-drt" firstAttribute="top" secondItem="bU6-89-KuK" secondAttribute="top" id="i3K-vq-2Kw"/>
                             <constraint firstItem="lc8-GC-drt" firstAttribute="bottom" secondItem="cNm-56-Ee4" secondAttribute="bottom" id="jYd-u1-uxt"/>
                             <constraint firstItem="cNm-56-Ee4" firstAttribute="leading" secondItem="wgd-Wk-4PV" secondAttribute="leading" id="kXc-fE-MQC"/>
-                            <constraint firstItem="lc8-GC-drt" firstAttribute="centerX" secondItem="cNm-56-Ee4" secondAttribute="centerX" id="rCB-I7-7X3"/>
+                            <constraint firstItem="Gen-nT-eJy" firstAttribute="centerX" secondItem="cNm-56-Ee4" secondAttribute="centerX" id="mdG-xq-9Hz"/>
+                            <constraint firstItem="lc8-GC-drt" firstAttribute="trailing" secondItem="cNm-56-Ee4" secondAttribute="trailing" id="q0J-5x-KZw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wgd-Wk-4PV"/>
                     </view>
                     <connections>
+                        <outlet property="fallButton" destination="Fed-bU-Zv4" id="Ken-cL-RuH"/>
+                        <outlet property="hireMeLabel" destination="Gen-nT-eJy" id="VgY-mI-SNi"/>
                         <outlet property="imagesScrollView" destination="cNm-56-Ee4" id="sQ1-A8-sVe"/>
                         <outlet property="pageControl" destination="lc8-GC-drt" id="8qp-IS-Q8B"/>
+                        <outlet property="pageControlBackground" destination="bU6-89-KuK" id="LKM-VD-uLW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OQX-eV-tzq" userLabel="First Responder" sceneMemberID="firstResponder"/>
