@@ -10,6 +10,7 @@
 		3FA40A199F9450ADD8C00FAA /* libPods-JordanImageSearchTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA881BAD6C65195EC8AB4789 /* libPods-JordanImageSearchTests.a */; };
 		5D82DF452066A82600C7408F /* SearchCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D82DF442066A82600C7408F /* SearchCollectionReusableView.m */; };
 		5D82DF4C2066B5FE00C7408F /* UIColor+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D82DF4B2066B5FE00C7408F /* UIColor+Utilities.m */; };
+		5D82DF4F2066B93300C7408F /* ImagesDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D82DF4E2066B93300C7408F /* ImagesDetailViewController.m */; };
 		5DEA23862066950C00F0FC13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEA23852066950C00F0FC13 /* AppDelegate.m */; };
 		5DEA238C2066950C00F0FC13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DEA238A2066950C00F0FC13 /* Main.storyboard */; };
 		5DEA238E2066950C00F0FC13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DEA238D2066950C00F0FC13 /* Assets.xcassets */; };
@@ -38,6 +39,8 @@
 		5D82DF442066A82600C7408F /* SearchCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchCollectionReusableView.m; sourceTree = "<group>"; };
 		5D82DF4A2066B5FE00C7408F /* UIColor+Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Utilities.h"; sourceTree = "<group>"; };
 		5D82DF4B2066B5FE00C7408F /* UIColor+Utilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Utilities.m"; sourceTree = "<group>"; };
+		5D82DF4D2066B93300C7408F /* ImagesDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImagesDetailViewController.h; sourceTree = "<group>"; };
+		5D82DF4E2066B93300C7408F /* ImagesDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagesDetailViewController.m; sourceTree = "<group>"; };
 		5DEA23812066950C00F0FC13 /* JordanImageSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JordanImageSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DEA23842066950C00F0FC13 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5DEA23852066950C00F0FC13 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -172,6 +175,8 @@
 			children = (
 				5DEA23AD206698B100F0FC13 /* ImagesSearchViewController.h */,
 				5DEA23AE206698B100F0FC13 /* ImagesSearchViewController.m */,
+				5D82DF4D2066B93300C7408F /* ImagesDetailViewController.h */,
+				5D82DF4E2066B93300C7408F /* ImagesDetailViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -401,6 +406,7 @@
 				5DEA23AF206698B100F0FC13 /* ImagesSearchViewController.m in Sources */,
 				5D82DF4C2066B5FE00C7408F /* UIColor+Utilities.m in Sources */,
 				5DEA23862066950C00F0FC13 /* AppDelegate.m in Sources */,
+				5D82DF4F2066B93300C7408F /* ImagesDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

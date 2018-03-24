@@ -12,6 +12,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "SearchCollectionReusableView.h"
 #import "UIColor+Utilities.h"
+#import "ImagesDetailViewController.h"
 
 @interface ImagesSearchViewController ()
 
@@ -39,10 +40,12 @@
                                                                 self.view.frame.size.width,
                                                                 50)];
     
-    [_animateButton setTitle:@"Animer les images" forState:UIControlStateNormal];
+    [_animateButton setTitle:@"Voir les images" forState:UIControlStateNormal];
     _animateButton.backgroundColor = [UIColor colorFromHexString:@"#68D89B"];
-    [self.view addSubview:_animateButton];
     
+    [_animateButton addTarget:self action:@selector(animateImages) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:_animateButton];
     [_animateButton setHidden:YES];
 }
 
@@ -86,10 +89,7 @@
     
     NSDictionary *imgDict = [_imagesList objectAtIndex:indexPath.row];
     
-    int imageId = [[[_imagesList objectAtIndex:indexPath.row] objectForKey:@"id"] intValue];
-    NSNumber *selectedImageId = [NSNumber numberWithInt:imageId];
-    
-    if([_selectedImagesList containsObject:selectedImageId]){
+    if([_selectedImagesList containsObject:imgDict]){
         [cell.selectedImageView setHidden:NO];
     } else{
         [cell.selectedImageView setHidden:YES];
@@ -117,14 +117,14 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    int imageId = [[[_imagesList objectAtIndex:indexPath.row] objectForKey:@"id"] intValue];
-    NSNumber *selectedImageId = [NSNumber numberWithInt:imageId];
+    
+    NSDictionary *selectedImage = [_imagesList objectAtIndex:indexPath.row];
     
     //If image already selected, deselect it
-    if([_selectedImagesList containsObject:selectedImageId]){
-        [_selectedImagesList removeObject:selectedImageId];
+    if([_selectedImagesList containsObject:selectedImage]){
+        [_selectedImagesList removeObject:selectedImage];
     } else{
-        [_selectedImagesList addObject:selectedImageId];
+        [_selectedImagesList addObject:selectedImage];
     }
     
     //If 2 items selected or more, show button
@@ -173,6 +173,18 @@
             [self.collectionView reloadData];
         }
     }];
+}
+
+#pragma mark - animate button
+- (void) animateImages{
+    [self performSegueWithIdentifier:@"showImages" sender:_animateButton];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([[segue identifier] isEqualToString:@"showImages"]){
+        ImagesDetailViewController *destVC = [segue destinationViewController];
+        destVC.imagesList = _selectedImagesList;
+    }
 }
 
 @end
