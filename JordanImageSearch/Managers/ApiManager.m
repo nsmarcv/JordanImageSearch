@@ -13,7 +13,7 @@
 
 static ApiManager *sharedInstance = nil;
 
-const NSString *apiUrl = @"https://pixabay.com/api/?key=5511001-7691b591d9508e60ec89b63c4&lang=fr";
+const NSString *apiUrl = @"https://pixabay.com/api/?key=5511001-7691b591d9508e60ec89b63c4&lang=fr&per_page=20";
 //const NSString *apiKey = @"5511001-7691b591d9508e60ec89b63c4";
 
 + (ApiManager *) sharedInstance{
@@ -26,12 +26,12 @@ const NSString *apiUrl = @"https://pixabay.com/api/?key=5511001-7691b591d9508e60
 
 #pragma mark - GET
 //GET IMAGES
-- (void) getImagesWithSearch:(NSString *)searchParam andCompletionBlock:(void(^)(NSError *error, NSDictionary *json))completion{
+- (void) getImagesWithSearch:(NSString *)searchParam andPage:(int)page andCompletionBlock:(void(^)(NSError *error, NSDictionary *json))completion{
     
     //Replace empty space with '+'
     searchParam = [searchParam stringByReplacingOccurrencesOfString:@" " withString:@"+"];
     
-    NSString *imagesUrl = [NSString stringWithFormat:@"%@&q=%@", apiUrl,searchParam];
+    NSString *imagesUrl = [NSString stringWithFormat:@"%@&page=%@&q=%@", apiUrl, [NSString stringWithFormat:@"%d", page], searchParam];
     
     [self makeHTTPGetRequestWithUrl:imagesUrl andCompletionBlock:^(NSError *error, id responseObject) {
         if(error) {

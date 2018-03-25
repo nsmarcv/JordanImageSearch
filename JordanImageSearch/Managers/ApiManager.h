@@ -13,7 +13,7 @@
 + (ApiManager *) sharedInstance;
 
 //GET
-- (void) getImagesWithSearch:(NSString *)searchParam andCompletionBlock:(void(^)(NSError *error, NSDictionary *json))completion;
+- (void) getImagesWithSearch:(NSString *)searchParam andPage:(int)page andCompletionBlock:(void(^)(NSError *error, NSDictionary *json))completion;
 
 //POST
 
