@@ -67,24 +67,16 @@
     //Show green filter if image is selected
     if([_selectedImagesList containsObject:imgDict]){
         [cell.selectedImageView setHidden:NO];
-    } else{
-        [cell.selectedImageView setHidden:YES];
     }
     
-    
-    cell.imgView.image = nil;
-    [cell.imageLoadingIndicator setHidden:NO];
     
     //Load image
     NSURL *imgUrl = [NSURL URLWithString:[imgDict objectForKey:@"largeImageURL"]];
     if(imgUrl){
-        [[SDWebImageManager sharedManager] loadImageWithURL:imgUrl options:0 progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
-
-            //If success
-            if(image){
-                cell.imgView.image = image;
-                [cell.imageLoadingIndicator setHidden:YES];
-            }
+        
+        [cell.imgView sd_setImageWithURL:imgUrl completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+            [cell.imageLoadingIndicator setHidden:YES];
+            //TODO SHOW PLACEHOLDER IF ERROR 'X'
         }];
     }
     
