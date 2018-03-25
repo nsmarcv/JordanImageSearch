@@ -128,6 +128,7 @@
 #pragma mark SearchBar
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     _currentSearchText = searchBar.text;
+    [self.view endEditing:YES];
     
     //Reset pictures and selected pictures + hide animate button + scroll to top
     [_imagesList removeAllObjects];
