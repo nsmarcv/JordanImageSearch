@@ -13,7 +13,7 @@
 
 static ApiManager *sharedInstance = nil;
 
-const NSString *apiUrl = @"https://pixabay.com/api/?key=5511001-7691b591d9508e60ec89b63c4";
+const NSString *apiUrl = @"https://pixabay.com/api/?key=5511001-7691b591d9508e60ec89b63c4&lang=fr";
 //const NSString *apiKey = @"5511001-7691b591d9508e60ec89b63c4";
 
 + (ApiManager *) sharedInstance{

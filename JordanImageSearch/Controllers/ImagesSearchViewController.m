@@ -122,7 +122,7 @@
     } else{
         _imagesList = nil;
         [_pixabayLogo setHidden:YES];
-        _backgroundLabel.text = @"Quelles images voulez-vous afficher ?\n(Recherche en anglais)";
+        _backgroundLabel.text = @"Quelles images voulez-vous afficher ?";
         [self.imagesCollectionView reloadData];
     }
 }
