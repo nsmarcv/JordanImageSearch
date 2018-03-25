@@ -21,7 +21,7 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *backgroundLabel;
 
-@property (strong, nonatomic) UIButton *animateButton;
+@property (strong, nonatomic) UIButton *showImagesButton;
 
 @end
 
@@ -33,19 +33,19 @@
     _selectedImagesList = [[NSMutableArray alloc] init];
     
     //Create animateButton
-    _animateButton = [[UIButton alloc] initWithFrame:CGRectMake(
+    _showImagesButton = [[UIButton alloc] initWithFrame:CGRectMake(
                                                                 0,
                                                                 self.view.frame.size.height-50,
                                                                 self.view.frame.size.width,
                                                                 50)];
     
-    [_animateButton setTitle:@"Voir les images" forState:UIControlStateNormal];
-    _animateButton.backgroundColor = [UIColor colorFromHexString:@"#68D89B"];
+    [_showImagesButton setTitle:@"Voir les images" forState:UIControlStateNormal];
+    _showImagesButton.backgroundColor = [UIColor colorFromHexString:@"#68D89B"];
     
-    [_animateButton addTarget:self action:@selector(animateImages) forControlEvents:UIControlEventTouchUpInside];
+    [_showImagesButton addTarget:self action:@selector(showImages) forControlEvents:UIControlEventTouchUpInside];
     
-    [self.view addSubview:_animateButton];
-    [_animateButton setHidden:YES];
+    [self.view addSubview:_showImagesButton];
+    [_showImagesButton setHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -126,30 +126,33 @@
         [_selectedImagesList addObject:selectedImage];
     }
     
+    //Update button title to show nb of selected images
+    [_showImagesButton setTitle:[NSString stringWithFormat:@"Voir les %lu images", (unsigned long)[_selectedImagesList count]] forState:UIControlStateNormal];
+    
     //If 2 items selected or more, show button
     if([_selectedImagesList count] >= 2){
-        [_animateButton setHidden:NO];
-        [self.view bringSubviewToFront:_animateButton];
+        [_showImagesButton setHidden:NO];
+        [self.view bringSubviewToFront:_showImagesButton];
     }
     else{
-        [_animateButton setHidden:YES];
-        [self.view bringSubviewToFront:_animateButton];
+        [_showImagesButton setHidden:YES];
+        [self.view bringSubviewToFront:_showImagesButton];
     }
     
-    [self.collectionView reloadData];
+    [self.collectionView reloadItemsAtIndexPaths:[[NSArray alloc] initWithObjects:indexPath, nil]];
 }
 
 #pragma mark SearchBar
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     //Reset selected pictures + hide animate button
     [_selectedImagesList removeAllObjects];
-    [_animateButton setHidden:YES];
+    [_showImagesButton setHidden:YES];
     
     if(searchBar.text.length > 0){
         [self loadImagesWithSearch:searchBar.text];
     } else{
         _imagesList = nil;
-        _backgroundLabel.text = @"Quelles images voulez-vous afficher ?";
+        _backgroundLabel.text = @"Quelles images voulez-vous afficher ?\n(Recherche en anglais)";
         [self.collectionView reloadData];
     }
 }
@@ -184,8 +187,8 @@
 }
 
 #pragma mark - animate button
-- (void) animateImages{
-    [self performSegueWithIdentifier:@"showImages" sender:_animateButton];
+- (void) showImages{
+    [self performSegueWithIdentifier:@"showImages" sender:_showImagesButton];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

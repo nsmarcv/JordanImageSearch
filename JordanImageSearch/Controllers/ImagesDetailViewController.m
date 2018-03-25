@@ -17,6 +17,11 @@
 @property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (strong, nonatomic) IBOutlet UIView *pageControlBackground;
 
+@property (strong, nonatomic) IBOutlet UIScrollView *detailScrollView;
+@property (strong, nonatomic) IBOutlet UILabel *tagsLabel;
+@property (strong, nonatomic) IBOutlet UILabel *userLabel;
+@property (strong, nonatomic) IBOutlet UILabel *likesLabel;
+@property (strong, nonatomic) IBOutlet UILabel *favLabel;
 
 @property (strong, nonatomic) IBOutlet UIButton *fallButton;
 @property (strong, nonatomic) IBOutlet UILabel *hireMeLabel;
@@ -61,6 +66,8 @@
         
         _imagesScrollView.contentSize = CGSizeMake(screenWidth * [_imagesList count], screenWidth);
         
+        [self updateDetailLabels];
+        
     }
 }
 
@@ -70,6 +77,16 @@
     
     //Calculate the page we are on based on x coordinate position and width of scroll view
     _pageControl.currentPage = (int)xPos/width;
+    
+    [self updateDetailLabels];
+}
+
+- (void) updateDetailLabels{
+    NSDictionary *currentImg = [_imagesList objectAtIndex:_pageControl.currentPage];
+    _tagsLabel.text = [currentImg objectForKey:@"tags"];
+    _userLabel.text = [currentImg objectForKey:@"user"];
+    _likesLabel.text = [[currentImg objectForKey:@"likes"] stringValue];
+    _favLabel.text = [[currentImg objectForKey:@"favorites"] stringValue];
 }
 
 //Fall Animation
@@ -77,6 +94,7 @@
     if([_fallButton.titleLabel.text isEqualToString:@"DO NOT PRESS"]){
         [_pageControl setHidden:YES];
         [_pageControlBackground setHidden:YES];
+        [_detailScrollView setHidden:YES];
         [_hireMeLabel setHidden:NO];
         
         [_fallButton setEnabled:NO];
@@ -120,6 +138,7 @@
     else{
         [_pageControl setHidden:NO];
         [_pageControlBackground setHidden:NO];
+        [_detailScrollView setHidden:NO];
         [_hireMeLabel setHidden:YES];
         
         [_fallButton setTitle:@"DO NOT PRESS" forState:UIControlStateNormal];
