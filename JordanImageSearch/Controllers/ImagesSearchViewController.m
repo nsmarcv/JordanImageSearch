@@ -10,7 +10,6 @@
 #import "ApiManager.h"
 #import "ImageCollectionViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "SearchCollectionReusableView.h"
 #import "UIColor+Utilities.h"
 #import "ImagesDetailViewController.h"
 
@@ -21,7 +20,13 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *backgroundLabel;
 
-@property (strong, nonatomic) UIButton *showImagesButton;
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+
+@property (strong, nonatomic) IBOutlet UIButton *pixabayLogo;
+
+@property (strong, nonatomic) IBOutlet UIButton *showImagesButton;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *showImagesBottomConstraint;
+
 
 @end
 
@@ -29,23 +34,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     _selectedImagesList = [[NSMutableArray alloc] init];
-    
-    //Create animateButton
-    _showImagesButton = [[UIButton alloc] initWithFrame:CGRectMake(
-                                                                0,
-                                                                self.view.frame.size.height-50,
-                                                                self.view.frame.size.width,
-                                                                50)];
-    
-    [_showImagesButton setTitle:@"Voir les images" forState:UIControlStateNormal];
-    _showImagesButton.backgroundColor = [UIColor colorFromHexString:@"#68D89B"];
-    
-    [_showImagesButton addTarget:self action:@selector(showImages) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:_showImagesButton];
-    [_showImagesButton setHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,19 +42,6 @@
 }
 
 #pragma mark <UICollectionViewDataSource>
-
--  (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
-    
-    if (kind == UICollectionElementKindSectionHeader) {
-        SearchCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"CollectionViewHeader" forIndexPath:indexPath];
-
-        headerView.searchBar.delegate = self;
-        
-        return headerView;
-    }
-    
-    return nil;
-}
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
@@ -129,31 +105,25 @@
     //Update button title to show nb of selected images
     [_showImagesButton setTitle:[NSString stringWithFormat:@"Voir les %lu images", (unsigned long)[_selectedImagesList count]] forState:UIControlStateNormal];
     
-    //If 2 items selected or more, show button
-    if([_selectedImagesList count] >= 2){
-        [_showImagesButton setHidden:NO];
-        [self.view bringSubviewToFront:_showImagesButton];
-    }
-    else{
-        [_showImagesButton setHidden:YES];
-        [self.view bringSubviewToFront:_showImagesButton];
-    }
+    [self updateShowImageBottomConstraint];
     
-    [self.collectionView reloadItemsAtIndexPaths:[[NSArray alloc] initWithObjects:indexPath, nil]];
+    //Reload item to show green filter
+    [self.imagesCollectionView reloadItemsAtIndexPaths:[[NSArray alloc] initWithObjects:indexPath, nil]];
 }
 
 #pragma mark SearchBar
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     //Reset selected pictures + hide animate button
     [_selectedImagesList removeAllObjects];
-    [_showImagesButton setHidden:YES];
+    [self updateShowImageBottomConstraint];
     
     if(searchBar.text.length > 0){
         [self loadImagesWithSearch:searchBar.text];
     } else{
         _imagesList = nil;
+        [_pixabayLogo setHidden:YES];
         _backgroundLabel.text = @"Quelles images voulez-vous afficher ?\n(Recherche en anglais)";
-        [self.collectionView reloadData];
+        [self.imagesCollectionView reloadData];
     }
 }
 
@@ -179,16 +149,37 @@
             
             if([_imagesList count] < 1){
                 _backgroundLabel.text = [NSString stringWithFormat:@"Aucune image trouvée pour la recherche : \n%@", searchParam];
+                [_pixabayLogo setHidden:YES];
+            }
+            else{
+                [_pixabayLogo setHidden:NO];
             }
             
-            [self.collectionView reloadData];
+            [self.imagesCollectionView reloadData];
         }
     }];
 }
 
-#pragma mark - animate button
-- (void) showImages{
-    [self performSegueWithIdentifier:@"showImages" sender:_showImagesButton];
+#pragma mark - bottom button
+- (void) updateShowImageBottomConstraint{
+    //If 2 items selected or more
+    if([_selectedImagesList count] >= 2){
+        //If button is hidden
+        if([_showImagesBottomConstraint constant] == -50){
+            _showImagesBottomConstraint.constant = 0;
+        }
+    }
+    else{
+        if([_showImagesBottomConstraint constant] == 0){
+            _showImagesBottomConstraint.constant = -50;
+        }
+    }
+    
+    //Animate button
+    [UIView animateWithDuration:0.45 animations:^{
+        [self.view layoutIfNeeded];
+        [_showImagesButton setNeedsDisplay];
+    }];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -197,5 +188,11 @@
         destVC.imagesList = _selectedImagesList;
     }
 }
+
+- (IBAction)openPixabay:(id)sender {
+     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://pixabay.com/"] options:@{} completionHandler:^(BOOL success) { }];
+}
+
+
 
 @end

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ImagesSearchViewController : UICollectionViewController <UISearchBarDelegate>
+@interface ImagesSearchViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDelegate, UISearchBarDelegate>
+
+@property (strong, nonatomic) IBOutlet UICollectionView *imagesCollectionView;
+
 
 @end

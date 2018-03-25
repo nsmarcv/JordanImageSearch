@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3FA40A199F9450ADD8C00FAA /* libPods-JordanImageSearchTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA881BAD6C65195EC8AB4789 /* libPods-JordanImageSearchTests.a */; };
-		5D82DF452066A82600C7408F /* SearchCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D82DF442066A82600C7408F /* SearchCollectionReusableView.m */; };
 		5D82DF4C2066B5FE00C7408F /* UIColor+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D82DF4B2066B5FE00C7408F /* UIColor+Utilities.m */; };
 		5D82DF4F2066B93300C7408F /* ImagesDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D82DF4E2066B93300C7408F /* ImagesDetailViewController.m */; };
 		5DEA23862066950C00F0FC13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DEA23852066950C00F0FC13 /* AppDelegate.m */; };
@@ -35,8 +34,6 @@
 
 /* Begin PBXFileReference section */
 		414C4F7D1C587295AE6DC23F /* Pods-JordanImageSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JordanImageSearch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JordanImageSearch/Pods-JordanImageSearch.debug.xcconfig"; sourceTree = "<group>"; };
-		5D82DF432066A82600C7408F /* SearchCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchCollectionReusableView.h; sourceTree = "<group>"; };
-		5D82DF442066A82600C7408F /* SearchCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchCollectionReusableView.m; sourceTree = "<group>"; };
 		5D82DF4A2066B5FE00C7408F /* UIColor+Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Utilities.h"; sourceTree = "<group>"; };
 		5D82DF4B2066B5FE00C7408F /* UIColor+Utilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Utilities.m"; sourceTree = "<group>"; };
 		5D82DF4D2066B93300C7408F /* ImagesDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImagesDetailViewController.h; sourceTree = "<group>"; };
@@ -186,8 +183,6 @@
 			children = (
 				5DEA23B120669D0D00F0FC13 /* ImageCollectionViewCell.h */,
 				5DEA23B220669D0D00F0FC13 /* ImageCollectionViewCell.m */,
-				5D82DF432066A82600C7408F /* SearchCollectionReusableView.h */,
-				5D82DF442066A82600C7408F /* SearchCollectionReusableView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -402,7 +397,6 @@
 				5DEA23AB2066964E00F0FC13 /* ApiManager.m in Sources */,
 				5DEA23942066950C00F0FC13 /* main.m in Sources */,
 				5DEA23B320669D0D00F0FC13 /* ImageCollectionViewCell.m in Sources */,
-				5D82DF452066A82600C7408F /* SearchCollectionReusableView.m in Sources */,
 				5DEA23AF206698B100F0FC13 /* ImagesSearchViewController.m in Sources */,
 				5D82DF4C2066B5FE00C7408F /* UIColor+Utilities.m in Sources */,
 				5DEA23862066950C00F0FC13 /* AppDelegate.m in Sources */,
